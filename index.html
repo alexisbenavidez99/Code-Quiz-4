@@ -8,6 +8,7 @@
     <title>Code Quiz</title>
 </head>
 <body>
+    <!-- TOP BAR AND QUIZ INTRO -->
     <header>
         <div class="scores">
             View high scores
@@ -16,13 +17,44 @@
             Timer:
         </div>
     </header>
+    <section class="quiz-intro">
+        <h2>Coding Quiz Challenge</h2>
+        <p>Try to answer the code related questions within the time limit.<br>Keep in mind that wrong answers will penalize your score/time by 10 seconds!<br> Good luck!</p>
+        <button class="start">Start Quiz</button>
+    </section>
 
-        <section class="main">
-            <h2>Coding Quiz Challenge</h2>
-            <p>Try to answer the code related questions within the time limit.<br>Keep in mind that wrong answers will penalize your score/time by 10 seconds!<br> Good luck!</p>
-            <button class="start">Start Quiz</button>
-        </section>
 
+    <main>
+    <!-- QUESTION ONE -->
+    <section class="question-page">
+        <h2>Question</h2>
+        <li><button>Answer 1</button></li>
+        <li><button>Answer 2</button></li>
+        <li><button>Answer 3</button></li>
+        <li><button>Answer 4</button></li>
+    </section>
+
+    
+
+    <!-- SCORE REPORT -->
+    <section class="score-report">
+        <h2>All done!</h2>
+        <p>Your final score is: </p>
+        <form>
+            <label for="">Enter initials:</label>
+            <input type="text"> 
+            <button>Submit</button>
+        </form>
+    </section>
+
+    <!-- HIGHSCORE SCREEN -->
+    <section class="highscore">
+        <h2>High scores</h2>
+        <button>Go back</button>
+        <button>Clear high scores</button>
+    </section>
+
+    </main>
     <script src="./assets/script.js"></script>
 </body>
 </html>

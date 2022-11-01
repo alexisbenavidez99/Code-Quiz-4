@@ -12,10 +12,12 @@ header {
 .scores {
     margin: 0px;
     color: #Cf79ec;
+    font-size: 20px;
 }
 
 .timer {
     padding-right: 60px;
+    font-size: 20px;
 }
 
 .scores:hover {
@@ -23,17 +25,17 @@ header {
 }
 
 
-.main {
+.quiz-intro {
     text-align: center;
     position: relative;
     top: 120px;
 }
 
-.main h2 {
+.quiz-intro h2 {
     font-size: 50px;
 }
 
-.main p {
+.quiz-intro p {
     font-size: 30px;
 }
 
