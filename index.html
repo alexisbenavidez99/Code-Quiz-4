@@ -14,7 +14,7 @@
             View high scores
         </div>
         <div class="timer">
-            Timer:
+            Timer: <span id="timer"></span>
         </div>
     </header>
     <section class="quiz-intro">
@@ -28,16 +28,21 @@
     <!-- QUESTION ONE -->
     <section class="question-page">
         <h2>Question</h2>
-        <li><button>Answer 1</button></li>
-        <li><button>Answer 2</button></li>
-        <li><button>Answer 3</button></li>
-        <li><button>Answer 4</button></li>
+        <p id="question"></p>
+        <ol>
+        <li><button class="answer">Answer 1</button></li>
+        <li><button class="answer">Answer 2</button></li>
+        <li><button class="answer">Answer 3</button></li>
+        <li><button class="answer">Answer 4</button></li>
+        </ol>
     </section>
+
+    <section id="timer"></section>
 
     
 
     <!-- SCORE REPORT -->
-    <section class="score-report">
+    <section class="display-none score-report">
         <h2>All done!</h2>
         <p>Your final score is: </p>
         <form>
@@ -48,7 +53,7 @@
     </section>
 
     <!-- HIGHSCORE SCREEN -->
-    <section class="highscore">
+    <section class="highscore display-none">
         <h2>High scores</h2>
         <button>Go back</button>
         <button>Clear high scores</button>
