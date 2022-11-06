@@ -9,6 +9,15 @@ header {
     justify-content: space-between;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.wrapper {
+    margin: 200px;
+
+}
+
 .scores {
     margin: 0px;
     color: #Cf79ec;
@@ -48,6 +57,49 @@ header {
 .start:hover {
     background-color: #Cf79ec;
 }
+
+.question-page {
+    font-size: 30px;
+    font-weight: bolder;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.question-page p {
+    text-align: center;
+}
+
+.question-page li {
+    text-align: left;
+}
+
+.question-page li button {
+    width: 30%;
+    text-align: left;
+    margin: 5px;
+}
+
+.question-page button:hover {
+    background-color: #Cf79ec;
+}
+
+.answer {
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(53, 28, 116);
+    color: white;
+}
+
+.correct, .incorrect {
+    font-style: italic;
+    color: #C9CAC9;
+    font-size: 30px;
+    border-top: 2px solid #C9CAC9;
+    width: 100%;
+}
+
+
 
 .display-none {
     display: none;

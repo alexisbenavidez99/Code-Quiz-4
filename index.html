@@ -17,32 +17,38 @@
             Timer: <span id="timer"></span>
         </div>
     </header>
+
+    <div class="wrapper">
     <section class="quiz-intro">
         <h2>Coding Quiz Challenge</h2>
         <p>Try to answer the code related questions within the time limit.<br>Keep in mind that wrong answers will penalize your score/time by 10 seconds!<br> Good luck!</p>
         <button class="start">Start Quiz</button>
     </section>
 
-
+    
     <main>
     <!-- QUESTION ONE -->
     <section class="question-page">
-        <h2>Question</h2>
         <p id="question"></p>
-        <ol>
+        <ul>
         <li><button class="answer">Answer 1</button></li>
         <li><button class="answer">Answer 2</button></li>
         <li><button class="answer">Answer 3</button></li>
         <li><button class="answer">Answer 4</button></li>
-        </ol>
+        </ul>
     </section>
 
-    <section id="timer"></section>
+    <!-- INCORRECT/CORRECT -->
+    <section class="correct">
+        <p>Correct!</p>
+    </section>
 
-    
+    <section class="incorrect">
+        <p>Incorrect!</p>
+    </section>
 
     <!-- SCORE REPORT -->
-    <section class="display-none score-report">
+    <section id="score-report">
         <h2>All done!</h2>
         <p>Your final score is: </p>
         <form>
@@ -58,8 +64,8 @@
         <button>Go back</button>
         <button>Clear high scores</button>
     </section>
-
     </main>
+    </div>
     <script src="./assets/script.js"></script>
 </body>
 </html>

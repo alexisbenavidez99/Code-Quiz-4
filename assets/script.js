@@ -4,6 +4,9 @@ var mainPage = document.querySelector(".quiz-intro");
 var startButton = document.querySelector(".start");
 var question = document.querySelector("#question");
 var answerButtons = document.querySelectorAll(".answer");
+var questionPage = document.querySelector(".question-page");
+var correctEl = document.querySelector(".correct");
+var incorrectEl = document.querySelector(".incorrect");
 
 // The variable for how long the timer is 
 var secondsLeft = 60;
@@ -13,63 +16,76 @@ var questions = ["Commonly used data types DO NOT include:", "The condition in a
 var questionIndex = 0;
 
 var highScoreEl = document.querySelector('#high-score')
+var scoreReportEl = document.querySelector('#score-report')
 
+questionPage.style = 'display: none;'
 highScoreEl.style = 'display: none;'
+scoreReportEl.style = 'display: none;'
+correctEl.style = 'display: none;'
+incorrectEl.style = 'display: none;'
 // The variable is an object which is the answer key for the questions; each question has an object that holds each answer option and sets them to true or false
 
 var answerKey = {
     0: {
         possibleAnswers: {
-            'strings': false,
-            'booleans': false,
-            'alerts': true,
-            'numbers': false
+            '1. strings': false,
+            '2. booleans': false,
+            '3. alerts': true,
+            '4. numbers': false
         }
     },
     1: {
         possibleAnswers: {
-            'quotes': false,
-            'curly brackets': false,
-            'parentheses': true,
-            'square brackets': false
+            '1. quotes': false,
+            '2. curly brackets': false,
+            '3. parentheses': true,
+            '4. square brackets': false
         }
     },
     2: {
         possibleAnswers: {
-            'numbers and strings': false,
-            'other arrays': false,
-            'booleans': false,
-            'all of the above': true,
+            '1. numbers and strings': false,
+            '2. other arrays': false,
+            '3. booleans': false,
+            '4. all of the above': true,
         }
     },
     3: {
         possibleAnswers: {
-            'commas': false,
-            'curly brackets': false,
-            'quotes': true,
-            'parentheses': false
+            '1. commas': false,
+            '2. curly brackets': false,
+            '3. quotes': true,
+            '4. parentheses': false
         }
     },
     4: {
         possibleAnswers: {
-            'JavaScript': false,
-            'Terminal/Bash': false,
-            'For loops': false,
-            'console.log': true
+            '1. JavaScript': false,
+            '2. Terminal/Bash': false,
+            '3. For loops': false,
+            '4. console.log': true
         }
     }
 }
 
 // This function sets the timer
 function setTime() {
+    // This makes the main page text display none when the start button is clicked
+    mainPage.style = 'display: none;'
+    // Styling for questions
+    questionPage.style = 'display: block; text-align: center;'
+
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timer.textContent = secondsLeft;
         // This clears the timer when it hits 0
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            // This shows the high score board whenever the clock hits 0
-            highScoreEl.style = 'display: block;'
+            // This shows the high score board whenever the clock hits 0 and hides the question page
+            scoreReportEl.style = 'display: block; text-align: center;'
+            questionPage.style = 'display: none;'
+            correctEl.style = 'display: none;'
+            incorrectEl.style = 'display: none;'
         }
     }, 1000);
 }
@@ -81,7 +97,6 @@ function renderQuestion() {
         
     // This sets the current questions for the current question (questionIndex); object.keys grabs the array properties from answerKeys and the possibleAnswers
     const currentPossibleAnswers = Object.keys(answerKey[questionIndex].possibleAnswers)
-    console.log(currentPossibleAnswers)
     
     // This for loop is running through the length of the buttons for the answers
     for(var i = 0; i < answerButtons.length; i++) {
@@ -95,13 +110,20 @@ function renderQuestion() {
 for (var i = 0; i < answerButtons.length; i++) {
     answerButtons[i].addEventListener("click", function (event) {
         questionIndex++;
-        console.log(event.target.dataset)
-        if(event.target.dataset.correct === 'false') { // This if statement is saying if the answer is wrong, deduct 10 seconds
+        correctEl.style = 'display: none;'
+        incorrectEl.style = 'display: none;'
+        if (event.target.dataset.correct === 'false') { // This if statement is saying if the answer is wrong, deduct 10 seconds
             secondsLeft = secondsLeft - 10
+            incorrectEl.style = 'display: block;'
+        }
+        if (event.target.dataset.correct === 'true') {
+            correctEl.style = 'display: block;'
         }
         renderQuestion(); // This then runs the question function again
     })
 }
+
+
 
 // This event listener is listening for a click, and then running the timer and render question function
 startButton.addEventListener("click", () => {
