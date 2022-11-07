@@ -1,4 +1,4 @@
-var scores = document.querySelector(".scores");
+var scores = document.querySelector("#current-score");
 var timer = document.querySelector("#timer");
 var mainPage = document.querySelector(".quiz-intro");
 var startButton = document.querySelector(".start");
@@ -79,11 +79,11 @@ function setTime() {
         secondsLeft--;
         timer.textContent = secondsLeft;
         // This clears the timer when it hits 0
-        if (secondsLeft === 0) {
+        if (secondsLeft === 0 || questionIndex === questions.length) {
             clearInterval(timerInterval);
             // This shows the high score board whenever the clock hits 0 and hides the question page
-            scoreReportEl.style = 'display: block; text-align: center;'
             questionPage.style = 'display: none;'
+            scoreReportEl.style = 'display: block; text-align: center;'
             correctEl.style = 'display: none;'
             incorrectEl.style = 'display: none;'
         }
@@ -122,6 +122,14 @@ for (var i = 0; i < answerButtons.length; i++) {
         renderQuestion(); // This then runs the question function again
     })
 }
+
+// Local storage
+var userScore = localStorage.getItem("timer");
+scores.textContent = userScore;
+
+localStorage.setItem = 
+
+
 
 
 
