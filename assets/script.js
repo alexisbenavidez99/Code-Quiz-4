@@ -19,8 +19,7 @@ var questionIndex = 0;
 var highScoreEl = document.querySelector('#high-score')
 var scoreReportEl = document.querySelector('#score-report')
 
-questionPage.style.display= 'none'
-//highScoreEl.style = 'display: none;'
+questionPage.style = 'display: none;'
 scoreReportEl.style = 'display: none;'
 correctEl.style = 'display: none;'
 incorrectEl.style = 'display: none;'
@@ -72,9 +71,9 @@ var answerKey = {
 // This function sets the timer
 function setTime() {
     // This makes the main page text display none when the start button is clicked
-    //mainPage.style.display= "none"
+    mainPage.style = 'display: none;'
     // Styling for questions
-    //questionPage.style.display= "block"
+    questionPage.style = 'display: block;'
 
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -83,10 +82,11 @@ function setTime() {
         if (secondsLeft === 0 || questionIndex === questions.length) {
             clearInterval(timerInterval);
             // This shows the high score board whenever the clock hits 0 and hides the question page
-            questionPage.style = 'display: none;'
+            questionPage.style = 'display: block;'
             scoreReportEl.style = 'display: block; text-align: center;'
             correctEl.style = 'display: none;'
             incorrectEl.style = 'display: none;'
+            mainPage.style = 'display: none;'
         }
     }, 1000);
 }
@@ -125,7 +125,6 @@ for (var i = 0; i < answerButtons.length; i++) {
 }
 
 // Local storage
-//var localStorageArray = [];
 
 var userScore = localStorage.getItem("highScore");
 var parseUserScore = JSON.parse(userScore)
@@ -150,9 +149,6 @@ initialEl.addEventListener("click", () => {
 
 // This event listener is listening for a click, and then running the timer and render question function
 startButton.addEventListener("click", () => {
-    mainPage.style.display= "none"
-    // Styling for questions
-    questionPage.style.display= "block"
     setTime();
     renderQuestion();
 });

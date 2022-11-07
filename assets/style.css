@@ -114,6 +114,18 @@ a {
     font-size: 50px;
 }
 
+.high-btn {
+    font-size: 15px;
+    background-color: rgb(53, 28, 116);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.high-btn:hover {
+    background-color: #Cf79ec;
+}
+
 /* .score-button {
     font-size: 15px;
     border-radius: 10px;

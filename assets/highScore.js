@@ -1,6 +1,5 @@
 var userScore = localStorage.getItem("highScore");
-var parseUserScore = JSON.parse(userScore)
-//scores.textContent = userScore;
+var parseUserScore = JSON.parse(userScore);
 
 for(var i=0; i<parseUserScore.length; i++){
 
