@@ -10,13 +10,14 @@
 <body>
     <!-- TOP BAR AND QUIZ INTRO -->
     <header>
-        <div class="view-scores">View high scores</div>
+        <div class="view-scores"><a href="./highScore.html">View high scores</a></div>
         <div class="timer">
             Timer: <span id="timer"></span>
         </div>
     </header>
 
     <div class="wrapper">
+
     <section class="quiz-intro">
         <h2>Coding Quiz Challenge</h2>
         <p>Try to answer the code related questions within the time limit.<br>Keep in mind that wrong answers will penalize your score/time by 10 seconds!<br> Good luck!</p>
@@ -51,19 +52,17 @@
         <p>Your final score is: <span id="current-score"></span></p>
         <form>
             <label for="">Enter initials:</label>
-            <input type="text"> 
-            <button>Submit</button>
+            <input id="initials" type="text"/> 
+            <button id="initial-button">Submit</button>
         </form>
     </section>
 
     <!-- HIGHSCORE SCREEN -->
-    <section class="highscore" id="high-score">
-        <h2>High scores</h2>
-        <button>Go back</button>
-        <button>Clear high scores</button>
-    </section>
+   
     </main>
+
     </div>
+    
     <script src="./assets/script.js"></script>
 </body>
 </html>

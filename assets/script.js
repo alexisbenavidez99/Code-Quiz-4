@@ -7,7 +7,8 @@ var answerButtons = document.querySelectorAll(".answer");
 var questionPage = document.querySelector(".question-page");
 var correctEl = document.querySelector(".correct");
 var incorrectEl = document.querySelector(".incorrect");
-
+var initialEl = document.querySelector("#initial-button");
+var initialInputEl = document.querySelector("#initials");
 // The variable for how long the timer is 
 var secondsLeft = 60;
 // Array for the questions
@@ -18,8 +19,8 @@ var questionIndex = 0;
 var highScoreEl = document.querySelector('#high-score')
 var scoreReportEl = document.querySelector('#score-report')
 
-questionPage.style = 'display: none;'
-highScoreEl.style = 'display: none;'
+questionPage.style.display= 'none'
+//highScoreEl.style = 'display: none;'
 scoreReportEl.style = 'display: none;'
 correctEl.style = 'display: none;'
 incorrectEl.style = 'display: none;'
@@ -71,9 +72,9 @@ var answerKey = {
 // This function sets the timer
 function setTime() {
     // This makes the main page text display none when the start button is clicked
-    mainPage.style = 'display: none;'
+    //mainPage.style.display= "none"
     // Styling for questions
-    questionPage.style = 'display: block; text-align: center;'
+    //questionPage.style.display= "block"
 
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -124,17 +125,34 @@ for (var i = 0; i < answerButtons.length; i++) {
 }
 
 // Local storage
-var userScore = localStorage.getItem("timer");
-scores.textContent = userScore;
+//var localStorageArray = [];
 
-localStorage.setItem = 
+var userScore = localStorage.getItem("highScore");
+var parseUserScore = JSON.parse(userScore)
 
+if (parseUserScore.length === 0)
+{var localStorageArray = [];} 
+else
+{var localStorageArray = parseUserScore;}
+
+initialEl.addEventListener("click", () => {
+    var initials = initialInputEl.value
+    var highScore = {
+        initials: initials,
+        score: secondsLeft
+    }
+    localStorageArray.push(highScore)
+    localStorage.setItem("highScore", JSON.stringify(localStorageArray))
+})
 
 
 
 
 // This event listener is listening for a click, and then running the timer and render question function
 startButton.addEventListener("click", () => {
+    mainPage.style.display= "none"
+    // Styling for questions
+    questionPage.style.display= "block"
     setTime();
     renderQuestion();
 });
