@@ -22,10 +22,10 @@ WHEN the game is over
 THEN I can save my initials and score
 
 ## Usage
-Link to deployed site:
+Link to deployed site: https://alexisbenavidez99.github.io/Code-Quiz-4/
 
 ## Preview
-
+![screenshot](./assets/images/Screenshot%202022-11-07%20at%207.46.47%20PM%20(2).png)
 
 ## Development 
 This was created using JavaScript basics such as: timer intervals, local storage, event listeners, and more.
