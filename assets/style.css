@@ -114,19 +114,7 @@ a {
     font-size: 50px;
 }
 
-.high-btn {
-    font-size: 15px;
-    background-color: rgb(53, 28, 116);
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.high-btn:hover {
-    background-color: #Cf79ec;
-}
-
-/* .score-button {
+#initial-button {
     font-size: 15px;
     border-radius: 10px;
     padding: 10px;
@@ -134,12 +122,57 @@ a {
     color: white;
 }    
 
-.score-button:hover {
+#initial-button:hover {
     background-color: #Cf79ec;
-} */
+}
 
-/* #score-report {
+#score-report {
     text-align: center;
     font-size: 20px;
-} */
+}
 
+.high-back-btn, .high-clear-btn {
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(53, 28, 116);
+    color: white;
+    margin-top: 20px;
+}
+
+.high-back-btn:hover, .high-clear-btn:hover {
+    background-color: #Cf79ec;
+}
+
+#storedScore {
+    color: black;
+    font-size: 20px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 695px) {
+
+    .wrapper {
+        margin: 40px;
+    }
+
+    .quiz-intro {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .answer {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .answer {
+        font-size: 20px;
+    }
+
+    .question-page li button {
+        width: 45%;
+    }
+}
